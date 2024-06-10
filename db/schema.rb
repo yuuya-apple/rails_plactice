@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2024_06_09_143642) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-=======
-ActiveRecord::Schema[7.0].define(version: 2024_06_08_123415) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_09_212452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tasks", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 30, null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tasks_on_name", unique: true
   end
 
->>>>>>> parent of 0006e7c (migrate)
 end
