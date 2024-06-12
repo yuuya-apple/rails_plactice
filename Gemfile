@@ -45,6 +45,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'html2slim-ruby3'
+gem 'rails_autolink'
 gem 'slim-rails'
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_action :require_admin
+
   def new
     @user = User.new
   end
@@ -42,6 +44,10 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+
+  def require_admin
+    redirect_to(root_url) unless current_user.admin?
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :admin, :password, :password_digest)
